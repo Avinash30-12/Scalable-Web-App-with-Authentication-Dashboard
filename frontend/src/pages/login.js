@@ -6,23 +6,29 @@ import Link from "next/link";
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
+  e.preventDefault();
+  setError("");
+  setLoading(true); // start loading
 
-    try {
-      const res = await API.post("/auth/login", form);
-      localStorage.setItem("token", res.data.token);
-      router.push("/");
-    } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
-    }
-  };
+  try {
+    const res = await API.post("/auth/login", form);
+    localStorage.setItem("token", res.data.token);
+    router.push("/");
+  } catch (err) {
+    setError(err.response?.data?.message || "Login failed");
+  } finally {
+    setLoading(false); // stop loading
+  }
+};
+
 
   
   return (
@@ -65,11 +71,13 @@ export default function Login() {
           </div>
 
           <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-600 transition duration-300"
-          >
-            Login
+                 type="submit"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-600 transition duration-300"
+                disabled={loading} // disable while loading
+           >
+              {loading ? "Logging in..." : "Login"}
           </button>
+
         </form>
 
         <div className="mt-6 text-center">
