@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://scalable-web-app-with-authentication.onrender.com/api",
 });
 
 // Attach token automatically if present
