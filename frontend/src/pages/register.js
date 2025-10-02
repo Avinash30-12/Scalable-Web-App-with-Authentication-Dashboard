@@ -87,7 +87,6 @@ export default function Register() {
           >
             {loading ? "Registering..." : "Register"} {/* button text changes */}
           </button>
-          </button>
         </form>
 
         <div className="mt-6 text-center">
