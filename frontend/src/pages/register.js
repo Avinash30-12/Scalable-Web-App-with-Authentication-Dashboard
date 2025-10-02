@@ -6,6 +6,7 @@ import Link from "next/link";
 export default function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); 
   const router = useRouter();
 
   const handleChange = (e) =>
@@ -14,6 +15,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setLoading(true); // start loading
 
     try {
       const res = await API.post("/auth/register", form);
@@ -21,8 +23,11 @@ export default function Register() {
       router.push("/");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false); // stop loading
     }
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-200 to-blue-200 px-4">
@@ -78,8 +83,10 @@ export default function Register() {
           <button
             type="submit"
             className="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-xl font-semibold hover:from-green-600 hover:to-blue-600 transition duration-300"
+            disabled={loading} // disable while loading
           >
-            Register
+            {loading ? "Registering..." : "Register"} {/* button text changes */}
+          </button>
           </button>
         </form>
 
