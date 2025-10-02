@@ -47,15 +47,15 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="relative">
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
+                  <input
+  type="email"
+  name="email"
+  placeholder="Email"
+  className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent placeholder-black"
+  value={form.email}
+  onChange={handleChange}
+  required
+/>
           </div>
 
           <div className="relative">
