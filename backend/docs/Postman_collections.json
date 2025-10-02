@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "c2fdd68c-9c2e-4f10-8f4d-71148e898719",
+		"name": "Api Docs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47909651"
+	},
+	"item": [
+		{
+			"name": "/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test1@gmail.com\",\n    \"password\":\"test123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\":\"test2\",\n    \"email\":\"test2@gmail.com\",\n    \"password\":\"test1234567\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTask",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGUxMmVmMTNlYWQwNWMzMjBlOTNjNyIsImlhdCI6MTc1OTM4NDYyNCwiZXhwIjoxNzU5NDcxMDI0fQ.My_JMPVi2bLEV_vE7j5kKHW5cdR9D_i_9izRhabkYDI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Finish Project Report\",\n  \"description\": \"Complete the final report for the project by Friday\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGUxMmVmMTNlYWQwNWMzMjBlOTNjNyIsImlhdCI6MTc1OTM4NDYyNCwiZXhwIjoxNzU5NDcxMDI0fQ.My_JMPVi2bLEV_vE7j5kKHW5cdR9D_i_9izRhabkYDI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGUxMmVmMTNlYWQwNWMzMjBlOTNjNyIsImlhdCI6MTc1OTM4NDYyNCwiZXhwIjoxNzU5NDcxMDI0fQ.My_JMPVi2bLEV_vE7j5kKHW5cdR9D_i_9izRhabkYDI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n      \n        \"title\": \"Finish Project Report\",\n        \"description\": \"Complete the final report for the project by Friday\",\n        \"status\": \"completed\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/tasks/68de145713ead05c320e93d1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"68de145713ead05c320e93d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGUxMmVmMTNlYWQwNWMzMjBlOTNjNyIsImlhdCI6MTc1OTM4NDYyNCwiZXhwIjoxNzU5NDcxMDI0fQ.My_JMPVi2bLEV_vE7j5kKHW5cdR9D_i_9izRhabkYDI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/tasks/68de145713ead05c320e93d1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"68de145713ead05c320e93d1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGQ3MDA0ZmUzYzY2YzBkYTIxZDk3YSIsImlhdCI6MTc1OTM4MzI1NCwiZXhwIjoxNzU5NDY5NjU0fQ.EllbUGzafbPZ6ftSTTjXjWJtdFW2deLE59LYstxcTRQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/profile/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProfile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGQ3MDA0ZmUzYzY2YzBkYTIxZDk3YSIsImlhdCI6MTc1OTM4MzI1NCwiZXhwIjoxNzU5NDY5NjU0fQ.EllbUGzafbPZ6ftSTTjXjWJtdFW2deLE59LYstxcTRQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Avinash Jha\",\n  \"email\": \"avinash@example.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/profile/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
