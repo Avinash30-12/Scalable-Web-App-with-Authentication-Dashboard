@@ -45,39 +45,43 @@ export default function Register() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className="relative">
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
-              value={form.name}
-              onChange={handleChange}
-              required
-            />
+           <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            className="w-full px-4 py-3 border rounded-xl text-black placeholder-black
+                       focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+
           </div>
 
           <div className="relative">
             <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
+            type="email"
+            name="email"
+            placeholder="Email"
+            className="w-full px-4 py-3 border rounded-xl text-black placeholder-black
+                       focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
           </div>
 
           <div className="relative">
             <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
-              value={form.password}
-              onChange={handleChange}
-              required
-            />
+            type="password"
+            name="password"
+            placeholder="Password"
+            className="w-full px-4 py-3 border rounded-xl text-black placeholder-black
+                       focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
           </div>
 
           <button
